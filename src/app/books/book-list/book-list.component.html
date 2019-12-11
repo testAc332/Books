@@ -1,0 +1,10 @@
+<button (click)="create()">Add book</button>
+
+<ol>
+    <li *ngFor="let book of books">
+        {{book.title}}, {{book.author}}. Price: {{book.price}}
+        <button (click)="details(book)">Details</button>
+        <button (click)="update(book)">Update</button>
+        <button (click)="remove(book)">Remove</button>
+    </li>
+</ol>

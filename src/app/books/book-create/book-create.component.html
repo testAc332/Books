@@ -1,0 +1,9 @@
+<div class="card">
+    <h3>Book creation</h3>
+    <app-book [book]="book" (validate)="onValidate($event)"></app-book>
+</div>
+
+
+<button (click)="create()" [disabled]="!formIsValid">Create</button>
+<button (click)="create(5000)" [disabled]="!formIsValid">Delay Create</button>
+<button (click)="back()">Back</button>
