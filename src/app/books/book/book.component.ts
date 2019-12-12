@@ -2,7 +2,7 @@ import { Component, EventEmitter, Input, OnDestroy, OnInit, Output } from '@angu
 import { Book } from '../shared/book';
 import { FormBuilder, FormGroup, Validators } from '@angular/forms';
 import { FormService } from '../../shared/form.service';
-import { SubscriptionManager } from '../../shared/Subscription.manager';
+import { Subscription } from 'rxjs';
 
 @Component({
     selector: 'app-book',
@@ -13,7 +13,7 @@ export class BookComponent implements OnInit, OnDestroy {
     @Input() book: Book;
     @Output() validate = new EventEmitter<boolean>();
     form: FormGroup;
-    subscribes = new SubscriptionManager();
+    subscribes = new Subscription();
 
     constructor(private formBuilder: FormBuilder,
                 private formService: FormService
@@ -35,7 +35,7 @@ export class BookComponent implements OnInit, OnDestroy {
     }
 
     validationCheck() {
-        this.subscribes.append(
+        this.subscribes.add(
             this.form.statusChanges.subscribe(
                 status => this.validate.emit(status === 'VALID')
             )

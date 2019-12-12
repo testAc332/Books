@@ -3,7 +3,7 @@ import Log from '../shared/log';
 import { LogService } from '../shared/log.service';
 import { MessagingService } from '../../shared/messaging.service';
 import Message from '../../shared/message';
-import { SubscriptionManager } from '../../shared/Subscription.manager';
+import { Subscription } from 'rxjs';
 
 
 @Component({
@@ -13,7 +13,7 @@ import { SubscriptionManager } from '../../shared/Subscription.manager';
 })
 export class LogsListComponent implements OnInit, OnDestroy {
     logs: Log[];
-    private subscriptions = new SubscriptionManager();
+    private subscriptions = new Subscription();
 
     constructor(private messagingService: MessagingService,
                 private logService: LogService
@@ -29,7 +29,7 @@ export class LogsListComponent implements OnInit, OnDestroy {
     }
 
     private subscribeForUpdates() {
-        this.subscriptions.append(
+        this.subscriptions.add(
             this.messagingService.listen().subscribe(
                 (message: Message) => {
                     if (message.type === 'log') {
