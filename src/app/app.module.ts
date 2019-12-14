@@ -5,25 +5,26 @@ import { RouterModule, Routes } from '@angular/router';
 import { AppComponent } from './app.component';
 import { BooksModule } from './books/books.module';
 import { LogsModule } from './logs/logs.module';
+import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
 
-const appRoutes: Routes = [
-];
+const appRoutes: Routes = [];
 
 @NgModule({
-    declarations: [
-        AppComponent
-    ],
-    imports: [
-        RouterModule.forRoot(
-            appRoutes
-        ),
-        BrowserModule,
+  declarations: [
+    AppComponent
+  ],
+  imports: [
+    RouterModule.forRoot(
+      appRoutes
+    ),
+    BrowserModule,
 
-        BooksModule,
-        LogsModule
-    ],
-    providers: [],
-    bootstrap: [AppComponent]
+    BooksModule,
+    LogsModule,
+    BrowserAnimationsModule
+  ],
+  providers: [],
+  bootstrap: [AppComponent]
 })
 export class AppModule {
 }

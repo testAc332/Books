@@ -19,7 +19,16 @@ export class BooksService {
         this.books = [
             new Book('Poem', 'Pushkin', 2700),
             new Book('Harry Potter', 'Joanne Rowling', 2300),
-            new Book('Lord of the rings', 'John Tolkien', 3900)
+            new Book('Lord of the rings', 'John Tolkien', 3900),
+            new Book('Cat book', 'Pukov', 2780),
+            new Book('Test book', 'Tester', 2350),
+            new Book('12 Poem about summer', 'Plushkin', 5500),
+            new Book('Modern cars', 'Elon Max', 2500),
+            new Book('HPMOR', 'Eliezer Udkowsky', 3300),
+            new Book('Lord of the rings 2', 'John Tolkien', 4190),
+            new Book('Lord of the rings 3 fanfics', 'Pushkin', 8900),
+            new Book('Harry Potter: back to mordor', 'Joanne Rowling', 10),
+            new Book('Lord of the cats', 'John Catswill', 3950),
         ];
     }
 
